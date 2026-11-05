@@ -1,16 +1,45 @@
+import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Source_Serif_4 } from "next/font/google"
+import { Cormorant, Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import { AuthProvider } from "@/contexts/auth-context"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const serif = Source_Serif_4({ subsets: ["latin"], variable: "--font-source-serif" })
+const cormorant = Cormorant({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+})
 
-export const metadata: Metadata = { title: "Estudio", description: "Gestión de causas para estudios jurídicos" }
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: "CONVS Abogados Asociados | Estudio Jurídico",
+  description: "Ofrecemos servicio jurídico integral, extrajudicial, judicial, de forma humana y empática.",
+  generator: "v0.app",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="es-AR" className={`${inter.variable} ${serif.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="es">
+      <body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+        <Analytics />
+      </body>
     </html>
   )
 }
