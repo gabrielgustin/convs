@@ -18,15 +18,15 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Cambiar cuando pasamos la altura del hero (aproximadamente 100vh - algo de margen)
-      const heroHeight = window.innerHeight * 0.85
-      setIsScrolled(window.scrollY > heroHeight)
+      // En la portada, al pasar la foto principal; en las demás páginas, apenas se baja.
+      const threshold = pathname === "/" ? window.innerHeight * 0.85 : 40
+      setIsScrolled(window.scrollY > threshold)
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     handleScroll() // Check initial state
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [pathname])
 
   // Detectar página actual
   useEffect(() => {
@@ -78,12 +78,12 @@ export function Header() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? "bg-[#2d3126]/95 backdrop-blur-md shadow-sm" 
+            ? "bg-[#2d3126]/95 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.06),0_8px_24px_rgba(0,0,0,0.18)]" 
             : "bg-transparent"
         }`}
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className={`flex items-center h-20 lg:h-24 ${pathname === "/" ? "justify-center" : "justify-between"}`}>
+          <div className={`flex items-center transition-[height] duration-300 ${isScrolled ? "h-16 lg:h-20" : "h-20 lg:h-24"} ${pathname === "/" ? "justify-center" : "justify-between"}`}>
             {/* Logo - Hidden on Home */}
             {pathname !== "/" && (
               <Link href="/" className="flex-shrink-0">
@@ -92,7 +92,7 @@ export function Header() {
                   alt="CONVS Abogados Asociados"
                   width={200}
                   height={70}
-                  className="h-12 lg:h-16 w-auto"
+                  className={`w-auto transition-[height] duration-300 ${isScrolled ? "h-10 lg:h-12" : "h-12 lg:h-16"}`}
                   priority
                 />
               </Link>

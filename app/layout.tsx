@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Cormorant, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AuthProvider } from "@/contexts/auth-context"
+import { RevealOnScroll } from "@/components/reveal-on-scroll"
 import "./globals.css"
 
 const cormorant = Cormorant({
@@ -38,6 +39,7 @@ export default function RootLayout({
         <AuthProvider>
           {children}
         </AuthProvider>
+        <RevealOnScroll />
         <Analytics />
       </body>
     </html>
