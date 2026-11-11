@@ -73,6 +73,8 @@ export function Footer() {
               aria-label="Visitar Autogestiva"
             >
               <img
+                loading="lazy"
+                decoding="async"
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logofooter-DJsq2VsZ29M69TvduXUxBFF0OQf8AX.png"
                 alt="Autogestiva"
                 className="h-12 w-auto opacity-80 brightness-0 invert transition-opacity group-hover:opacity-100"

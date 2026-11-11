@@ -41,14 +41,18 @@ export function About() {
                 <div className="space-y-4">
                   <div className="aspect-[3/4] rounded-sm overflow-hidden">
                     <img
-                      src="/elegant-law-office.png"
+                      loading="lazy"
+                      decoding="async"
+                      src="/elegant-law-office.jpg"
                       alt="Oficina CONVS"
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     />
                   </div>
                   <div className="aspect-square rounded-sm overflow-hidden">
                     <img
-                      src="/law-books-library.png"
+                      loading="lazy"
+                      decoding="async"
+                      src="/law-books-library.jpg"
                       alt="Biblioteca jurídica"
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     />
@@ -57,6 +61,8 @@ export function About() {
                 <div className="space-y-4 pt-12">
                   <div className="aspect-square rounded-sm overflow-hidden">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src="/law-office-meeting-room.jpg"
                       alt="Sala de reuniones"
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
@@ -64,6 +70,8 @@ export function About() {
                   </div>
                   <div className="aspect-[3/4] rounded-sm overflow-hidden">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src="/elegant-law-office-reception.jpg"
                       alt="Recepción"
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"

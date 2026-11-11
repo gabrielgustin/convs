@@ -138,6 +138,8 @@ export default function CursosPage() {
                   <div className="lg:w-2/5">
                     <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={curso.image || "/placeholder.svg"}
                         alt={curso.titulo}
                         className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"

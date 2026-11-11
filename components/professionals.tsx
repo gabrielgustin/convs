@@ -62,6 +62,8 @@ export function Professionals() {
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-muted">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={professional.image || "/placeholder.svg"}
                   alt={professional.name}
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
@@ -87,6 +89,8 @@ export function Professionals() {
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-muted">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={professional.image || "/placeholder.svg"}
                   alt={professional.name}
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"

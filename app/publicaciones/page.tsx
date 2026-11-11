@@ -71,7 +71,7 @@ export default function PublicacionesPage() {
       fecha: "18 de Septiembre, 2024",
       category: "Derecho Sucesorio",
       author: "Dr. Juan Carlos Martínez",
-      image: "/estate-planning-documents.png",
+      image: "/estate-planning-documents.jpg",
     },
     {
       id: "6",
@@ -81,7 +81,7 @@ export default function PublicacionesPage() {
       fecha: "3 de Septiembre, 2024",
       category: "Derecho Comercial",
       author: "Dr. Juan Carlos Martínez",
-      image: "/business-contract-signing.png",
+      image: "/business-contract-signing.jpg",
     },
   ]
 
@@ -113,6 +113,8 @@ export default function PublicacionesPage() {
                   {/* Image */}
                   <div className="relative aspect-[3/2] overflow-hidden">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={pub.image || "/placeholder.svg"}
                       alt={pub.titulo}
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"

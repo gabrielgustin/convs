@@ -57,11 +57,16 @@ export function RevealOnScroll() {
 
     scan()
     // Publicaciones y cursos se cargan después; las tarjetas nuevas también se animan.
-    const mo = new MutationObserver(scan)
+    // Varios cambios seguidos del DOM se agrupan en un solo escaneo por cuadro.
+    let pending = 0
+    const mo = new MutationObserver(() => {
+      if (!pending) pending = requestAnimationFrame(() => ((pending = 0), scan()))
+    })
     mo.observe(document.querySelector("main") ?? document.body, { childList: true, subtree: true })
     return () => {
       io.disconnect()
       mo.disconnect()
+      cancelAnimationFrame(pending)
     }
   }, [pathname])
 

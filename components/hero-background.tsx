@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 
-// Fondo de la portada con profundidad leve: baja al 25% de la velocidad del scroll.
+// Fondo de la portada (desenfoque y oscurecido ya vienen en la imagen) con profundidad leve: baja al 25% de la velocidad del scroll.
 // Solo mientras la portada está a la vista y sin "reducir movimiento".
 export function HeroBackground() {
   const ref = useRef<HTMLDivElement>(null)
@@ -34,7 +34,6 @@ export function HeroBackground() {
         backgroundImage: "url('/team-office-background.jpg')",
         backgroundPosition: "50% center",
         backgroundSize: "cover",
-        filter: "brightness(0.65) blur(3px)",
       }}
     />
   )
