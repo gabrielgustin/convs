@@ -57,7 +57,7 @@ export function Header() {
     { href: "/profesionales", label: "PROFESIONALES" },
     { href: "/publicaciones", label: "PUBLICACIONES" },
     { href: "/cursos", label: "CURSOS" },
-    { href: "#contacto", label: "CONTACTO" },
+    { href: "/#contacto", label: "CONTACTO" },
   ]
 
   const handleAdminClick = () => {

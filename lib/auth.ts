@@ -19,7 +19,12 @@ const origins = [
     : []),
 ]
 
+// Solo estos emails (separados por coma, en Vercel) pueden registrarse y editar contenido. Vacío = nadie.
+const adminEmails = (process.env.ADMIN_EMAILS ?? '').split(',').map((e) => e.trim().toLowerCase()).filter(Boolean)
+export const isAdminEmail = (email?: string | null) => !!email && adminEmails.includes(email.toLowerCase())
+
 export const auth = betterAuth({
+  databaseHooks: { user: { create: { before: async (user) => (isAdminEmail(user.email) ? undefined : false) } } },
   database: pool,
   baseURL: process.env.BETTER_AUTH_URL ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : process.env.V0_RUNTIME_URL),
   emailAndPassword: { enabled: true, autoSignIn: true },

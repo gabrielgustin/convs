@@ -94,7 +94,7 @@ export default function EspecialidadesPage() {
               Nuestro equipo está listo para analizar su caso y brindarle la mejor solución jurídica.
             </p>
             <a
-              href="#contacto"
+              href="/#contacto"
               className="inline-block px-8 py-4 bg-primary text-primary-foreground font-sans tracking-wider hover:bg-primary/90 transition-colors"
             >
               CONTACTAR

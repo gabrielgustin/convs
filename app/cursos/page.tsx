@@ -301,7 +301,7 @@ export default function CursosPage() {
               Ofrecemos cursos in-company adaptados a las necesidades específicas de su empresa u organización.
             </p>
             <a
-              href="#contacto"
+              href="/#contacto"
               className="inline-block px-8 py-4 bg-primary text-primary-foreground font-sans tracking-wider hover:bg-primary/90 transition-colors"
             >
               CONSULTAR

@@ -127,7 +127,7 @@ export default function ProfesionalesPage() {
               Agende una consulta y permítanos acompañarlo en sus necesidades legales.
             </p>
             <a
-              href="#contacto"
+              href="/#contacto"
               className="inline-block px-8 py-4 bg-primary text-primary-foreground font-sans tracking-wider hover:bg-primary/90 transition-colors"
             >
               AGENDAR CONSULTA
