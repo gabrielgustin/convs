@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" data-scroll-behavior="smooth">
       <body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
         <AuthProvider>
           {children}

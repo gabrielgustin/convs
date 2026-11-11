@@ -1,19 +1,12 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { HeroBackground } from "./hero-background"
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-secondary text-secondary-foreground overflow-hidden">
-      {/* Imagen de fondo del equipo con blur sutil */}
-      <div 
-        className="absolute inset-0 bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: "url('/team-office-background.jpg')",
-          backgroundPosition: "50% center",
-          backgroundSize: "cover",
-          filter: "brightness(0.65) blur(3px)",
-        }}
-      />
+      {/* Imagen de fondo del equipo con blur sutil; se mueve más lento que el texto al bajar */}
+      <HeroBackground />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8">
@@ -37,17 +30,19 @@ export function Hero() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Button
+              asChild
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans text-base tracking-wide"
             >
-              Conocé Nuestros Servicios
+              <a href="#especialidades">Conocé Nuestros Servicios</a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-primary/30 text-secondary-foreground hover:bg-primary/10 font-sans text-base tracking-wide bg-transparent"
             >
-              Escribinos
+              <a href="#contacto">Escribinos</a>
             </Button>
           </div>
 

@@ -134,6 +134,16 @@
   }
 }
 
+/* Scroll suave a anclas; el margen deja el título a la vista debajo del header fijo. */
+html {
+  scroll-padding-top: 4rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Aparición al hacer scroll (components/reveal-on-scroll.tsx). Solo se anima opacidad y desplazamiento. */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
